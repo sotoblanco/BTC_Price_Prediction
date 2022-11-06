@@ -120,18 +120,21 @@ This can be run locally by changing  url in the prediction_notebook to ``http://
 ### Optional: locustfile test
 
 **Optional**: locustfile.py can also be run to test the prediction service just run the ``predict.py`` using:
+
 ``
 bentoml serve --production
 ``
-This will run your service in the localhost:
 
-open a new command line (make sure locust is installed)
-run:
+This will run your service in the localhost:3000
+
+open a new command line (make sure locust is installed) run:
+
 ``
 locust -H http://localhost:3000
 `` 
 
 Open: ``localhost:8089`` in your browser and use the interface to add users and spawn rate:
+
 ![image](https://user-images.githubusercontent.com/46135649/199871260-3d6116c4-000b-472a-9752-c9e53d9f6665.png)
 
 This is a picture of the overall performance of the prediction service
@@ -139,9 +142,11 @@ This is a picture of the overall performance of the prediction service
 ### Deployment and Docker image
 
 The first step to deploy our model is building our bento:
+
 ``bentoml build``
 
 After that we create the **docker** images using bento with:
+
 ``bentoml containerize previous_high_classifier:o3w23es35cp4kaav`` 
 
 The tag ``o3w23es35cp4kaav`` is obtained from building your bento, you will get a different tag, make sure to copy the one from your model and not this one. 
