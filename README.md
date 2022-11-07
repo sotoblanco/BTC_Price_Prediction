@@ -27,9 +27,9 @@ Important details about the data:
 	- volume
 	- adj_close
  
- The last data was obtained November 3 2022 at 19:00 UTC
+ The last data store in the data folder to train our model was obtained November 3 2022 at 19:00 UTC
  
-This data is processed using the ``feature_engineering_btc.py`` file.
+This data is processed using the ``feature_engineering_btc.py`` file store in the data folder.
 
 We split the market hours into day and night:
 
@@ -72,7 +72,7 @@ The independent features represent the distance between features of the previous
 
 **bentofile.yaml**: Contains the bentoML file to run our service
 
-**locustfile.py**: To test our model
+**locustfile.py**: To test our prediction service
 
 **notebook.ipynb**: contains the notebook to explore the data and choose the model with the best results
 
@@ -211,6 +211,6 @@ Security group -> Edit
 - custom TCP 
 - port range 3000
 
-This [video](https://www.youtube.com/watch?v=aF-TfJXQX-w&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR&index=72) contains all the above steps
+This [video](https://www.youtube.com/watch?v=aF-TfJXQX-w&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR&index=72) contains all the steps to get your production service into AWS.
 
 The link to the prediction service is: http://3.232.96.214:3000/
