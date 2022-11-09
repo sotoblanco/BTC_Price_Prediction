@@ -33,8 +33,8 @@ This data is processed using the ``feature_engineering_btc.py`` file store in th
 
 We split the market hours into day and night:
 
-Day means the price between 9:00 to 16:59 EST
-Night means the price between 17:00 to 8:59 EST
+Day means the price between 9:00 to 16:59 UTC-4
+Night means the price between 17:00 to 8:59 UTC-4
 
 For each split (Day and night) we obtain the **high**, **low**, **open** (first) and **close** (last) price of the session
 
@@ -58,7 +58,9 @@ Independent features
 
 For this model we only use one dependent feature which is ``phigh_day_touch`` the rest of the dependent features are removed from the data.
 
-The independent features represent the distance between features of the previous day and night and the initial price at 9:00 am EST
+The independent features represent the distance between features of the previous day and night and the initial price at 9:00 am UTC-4
+
+The goal of this project is to predict the probability of BTC reaching the highest price of the previous day session.
 
 ## Structure of the repository
 
