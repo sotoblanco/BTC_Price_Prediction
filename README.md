@@ -4,11 +4,11 @@
 
 Bitcoin is a cryptocurrency that trades on the financial market, investor use metrics and indicators based on historical data to predict the future movement of the price, predicting price is usually not enough for investor to develop a successful trading strategy, a lot of things needs to be considered, such as time and also constraints about risk willing to take and how long they keep with the assets.
 
-Usually strategies follows trading guidelines and operators such as stop loss as measure of risk, take profit as measure of getting out of the market and entry as signal of exposure to the market, however, statistical decision based on probabilities is something we haven't seen yet with the amount of frequency we would like.
+Usually, strategies follows trading guidelines and operators such as stop loss as measure of risk, take profit as measure of getting out of the market and entry as signal of exposure to the market, however, statistical decision based on probabilities is something we haven't seen yet with the amount of frequency we would like.
 
 In this repository we evaluate the market based on certain indicators that allow to allocate probabilities on price zones, a key aspect about this repository is that it is not intended to be a strategy since it won't have the components needed to entry and exit a position, or even risk management, it would only show probabilities of certain regions of the market which can be used to reduce uncertainty in an already develop strategy.
 
-For meet with this goal every day after 9am EST we get a new set of predicted features that feeds the ML service and returns a probability of reaching a zone of the market, the data gets hourly updates so every time you run the predicted notebook you will see how the price change but the probability and the line remain in the same place until the next day. 
+To meet with this goal, every day after 9 am UTC-4 we get a new set of predicted features that feeds the ML service and returns a probability of reaching a zone of the market, the data gets hourly updates so every time you run the predicted notebook you will see how the price change but the probability and the line remain in the same place until the next day at 9 am UTC-4.
 
 ## Data
 
@@ -27,7 +27,7 @@ Important details about the data:
 	- volume
 	- adj_close
  
- The last data store in the data folder to train our model was obtained November 3 2022 at 19:00 UTC
+The last data store in the data folder to train our model was obtained November 3 2022 at 19:00 UTC
  
 This data is processed using the ``feature_engineering_btc.py`` file store in the data folder.
 
@@ -42,13 +42,15 @@ Finally, we obtain the ``BTC_feature_data.csv`` which has the following features
 
 - index: datetime index format YYYY-mm-dd
 
-Dependent features
+### Dependent features
+
 - **phigh_day_touch**: If we touch previous high of the day 
 - **plow_day_touch**: If we touch previous low of the day 
 - **phigh_night_touch**: If we touch previous high of the night
 - **plow_night_touch**: If we touch previous low of the night
 
-Independent features
+### Independent features
+
 - **ret_distance_phigh_day_open**: distance between the high of the previous day and the open divided by the open
 - **ret_distance_plow_day_open**: distance between the low of the previous day and the open divided by the open
 - **ret_distance_phigh_night_open**: distance between the high of the previous night and the open divided by the open
@@ -161,6 +163,7 @@ AWS
 **pre-requisets** needs to have AWS CLI installed which is command line to interact with AWS ( I have a windows and working with WSL, so I download the cli using the linux command)
 
 ### Elastic Container Registry:
+
 Place to store your container
 
 Create repo
