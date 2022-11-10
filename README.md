@@ -218,4 +218,20 @@ Security group -> Edit
 
 This [video](https://www.youtube.com/watch?v=aF-TfJXQX-w&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR&index=72) contains all the steps to get your production service into AWS.
 
-The link to the prediction service is: http://3.232.96.214:3000/
+The link to the prediction service is: http://3.232.96.214:3000/ 
+
+## Demostration
+
+At 9 am UTC-4 we obtain the first price of the session from which we calculate the independent features. We send the information to the prediction service store in AWS and display in a chart with plotly.
+
+![image](https://user-images.githubusercontent.com/46135649/201212415-1d413309-64f2-4371-82fc-dbc849545138.png)
+
+In this day the probability of reaching the price at $20700 was 7.93%
+
+The chart updates but the probability remains the same since the prediction is the probability of reaching that price between 9 am and 16 UTC-4
+
+![image](https://user-images.githubusercontent.com/46135649/201212954-16a3fd4d-c948-4fae-9b88-80ae1ec15067.png)
+
+After 16 UTC-4 there is no more updates of the chart until the next day since we only want to predict between that timeframe
+
+![image](https://user-images.githubusercontent.com/46135649/201213697-b9f57206-d540-4a1d-881b-65133683f597.png)
